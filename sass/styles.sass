@@ -1,0 +1,207 @@
+$color-orange: #f8721d
+$color-blue: #27c5ff
+$background-color1: #f7f7f7
+$background-color2: #fff
+*:focus, button:focus
+	outline: none
+body
+	font-size: 16px
+	cursor: default
+ul, nav
+	list-style: none
+	margin: 0
+	padding: 0
+
+a
+	color: #000
+	&:hover
+		text-decoration: none
+.spin
+	display: inline-block
+.wrapper
+	max-width: 1170px
+	margin: 0 auto
+	overflow: hidden
+.button
+	width: 170px
+	height: 45px
+	background-color: $color-blue
+	border-radius: 20px
+	color: #fff
+	text-transform: uppercase
+	opacity: 0.9
+	transition: 0.4s ease
+	&:hover
+		opacity: 1
+		background-color: $color-orange
+	&__slider
+		font-size: 20px
+		bottom: -25px
+		position: absolute
+		background-color: transparent
+		border: none
+		&__prev
+			right: 50px
+		&__next
+			right: 15px
+span[class*="icon-"]
+	padding: 5px
+	color: $color-blue
+	&:hover
+		color: $color-orange
+.header
+	width: 100%
+	&__row
+		justify-content: space-between
+		margin: 30px 0
+.menu
+	display: flex
+	justify-content: space-between
+	white-space: nowrap
+	align-items: center
+	&__item
+		&__link
+			font-weight: bolder
+			padding: 10px 30px
+			transition: 0.4s ease
+			border-radius: 20px
+			color: #778089
+			text-transform: uppercase
+			&:hover
+				color: #fff
+				background-color: $color-blue
+.section-slider
+	background-color: $background-color1
+.slider
+	&__item
+		padding: 50px 0
+	&__img
+		max-width: 750px
+/*GOODS */
+.goods
+	margin-top: 30px
+	margin-bottom: 30px
+	&:after
+		content: ''
+		background-color: $background-color1
+		height: 2px
+		width: 80%
+		display: block
+		position: relative
+		margin: 0px auto
+		top: 15px
+.goods1, .goods2, .goods3
+	background-color: $background-color2
+	&__left__item
+		padding: 20px
+	&__left img
+		max-width: 570px
+		background-color: transparent
+		& .slick-dots
+			bottom: 0
+	& .slick-current img
+		opacity: 1
+	&__content
+		position: relative
+		margin-bottom: 50px
+	&__right
+		z-index: 2
+		&__title
+			display: block
+			margin: 80px 0 60px
+			position: relative
+			&:after
+				display: block
+				position: absolute
+				content: ''
+				width: 30px
+				height: 3px
+				top: 65px
+				background-color: $color-blue
+				transition: 0.4s ease
+			&:hover:after
+				width: 60px
+		&__li, &__li2
+			padding: 5px 0
+			&:hover
+				[class^='icon-']
+					color: $color-orange
+					transition: 0.4s ease
+		&__li2
+			display: flex
+			align-items: center
+			[class^='icon-']
+				font-size: 25px
+			&__text
+				padding: 5px
+				letter-spacing: -0.03em
+				& p
+					margin: 0
+					line-height: 28px
+				& span
+					font-size: 20px
+		&__link:hover 
+			.spin
+				transition: 0.4s ease
+				transform: rotateX(180deg)
+				-webkit-transform: rotateX(180deg)
+				-ms-transform: rotateX(180deg)
+			.icon-right
+				color: $color-orange
+				transition: 0.4s ease
+	& .icon-right
+		font-size: 14px
+		font-weight: bold
+.button-row
+	display: flex
+	justify-content: space-between
+.goods2
+	background-color: $background-color1
+.goods1__left__nav__item, .goods2__left__nav__item, .goods3__left__nav__item
+	height: 100px
+	& img
+		width: 100px
+		opacity: 0.8
+		&:hover
+			opacity: 1
+			transition: 0.4s ease
+.about, .contacts
+	text-align: center
+.contacts
+	&__text
+		margin: 50px auto
+		font-size: 18px
+		&__mail
+			border-radius: 20px
+			padding: 0 10px
+
+.gradient 
+	background-color: #fbfbfb
+	/* IE9, iOS 3.2+ */
+	background-image: url(data:image/svg+xmlbase64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==)
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(255, 255, 255)),color-stop(1, rgb(247, 247, 247)))
+	/* Android 2.3 */
+	background-image: -webkit-linear-gradient(top,rgb(255, 255, 255) 0%,rgb(247, 247, 247) 100%)
+	/* IE10+ */
+	background-image: linear-gradient(to bottom,rgb(255, 255, 255) 0%,rgb(247, 247, 247) 100%)
+	background-image: -ms-linear-gradient(top,rgb(255, 255, 255) 0%,rgb(247, 247, 247) 100%)
+ 
+.toTop
+	display: flex
+	justify-content: center
+	align-items: center
+	position: fixed
+	right: 50px
+	bottom: 100px
+	background: $color-blue
+	width: 100px
+	height: 100px
+	border-radius: 50%
+	opacity: 0.7
+	z-index: 99
+	transition: 0.4s ease
+	font-size: 18px
+	&:hover
+		opacity: 1
+		color: $color-orange
+		flex-weight: bold
