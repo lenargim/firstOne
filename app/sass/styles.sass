@@ -15,6 +15,8 @@ a
 	color: #000
 	&:hover
 		text-decoration: none
+.animated
+	transition: all 1s ease !important
 .spin
 	display: inline-block
 .wrapper
@@ -58,6 +60,9 @@ span[class*="icon-"]
 	justify-content: space-between
 	white-space: nowrap
 	align-items: center
+	transition: all 1s ease !important
+	&__click
+		transition: all 1s ease !important
 	&__item
 		&__link
 			font-size: 15px
@@ -70,6 +75,46 @@ span[class*="icon-"]
 			&:hover
 				color: #fff
 				background-color: $color-blue
+.mobile-menu
+	position: relative
+	width: 45px
+	height: 35px
+	cursor: pointer
+	z-index: 3
+	left: 10px
+	padding: 0px
+	top: -45px
+	& span
+		position: absolute
+		width: 45px
+		height: 9px
+		background-color: #000
+		border-radius: 9px
+		left: 0
+		transform: rotate(0deg)
+		transition: 0.5s ease
+		&:nth-child(1)
+			top: 0
+		&:nth-child(2)
+			top: 13px
+		&:nth-child(3)
+			top: 13px
+		&:nth-child(4)
+			top: 26px
+	&__open span
+		&:nth-child(1)
+			top: 18px
+			width: 0
+			left: 50%
+		&:nth-child(2)
+			transform: rotate(45deg)
+		&:nth-child(3)
+			transform: rotate(-45deg)
+		&:nth-child(4)
+			top: 18px
+			width: 0
+			left: 50%
+			transition: 0.4s ease
 .section-slider
 	background-color: $background-color1
 .slider
@@ -77,6 +122,8 @@ span[class*="icon-"]
 		padding: 50px 0
 	&__img
 		max-width: 750px
+.title
+	margin: 30px auto
 /*GOODS */
 .goods
 	margin-top: 30px
@@ -162,7 +209,7 @@ span[class*="icon-"]
 	height: 100px
 	& img
 		width: 100px
-		opacity: 0.8
+		opacity: 0.6
 		&:hover
 			opacity: 1
 			transition: 0.4s ease
@@ -170,26 +217,24 @@ span[class*="icon-"]
 	text-align: center
 .contacts
 	&__text
-		margin: 50px auto
 		font-size: 18px
+		margin: 20px auto
 		&__mail
 			border-radius: 20px
 			padding: 0 10px
+			margin-bottom: 10px
+		&__phone, &__address
+			white-space: nowrap
 		&__phone:hover, &__address:hover, &__mail:hover
 			span[class^="icon"]
 				color: $color-orange
-
 .gradient 
 	background-color: #fbfbfb
-	/* IE9, iOS 3.2+ */
 	background-image: url(data:image/svg+xmlbase64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0idnNnZyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMCUiIHkyPSIxMDAlIj48c3RvcCBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjEiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiNmN2Y3ZjciIHN0b3Atb3BhY2l0eT0iMSIgb2Zmc2V0PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI3ZzZ2cpIiAvPjwvc3ZnPg==)
 	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%,color-stop(0, rgb(255, 255, 255)),color-stop(1, rgb(247, 247, 247)))
-	/* Android 2.3 */
 	background-image: -webkit-linear-gradient(top,rgb(255, 255, 255) 0%,rgb(247, 247, 247) 100%)
-	/* IE10+ */
 	background-image: linear-gradient(to bottom,rgb(255, 255, 255) 0%,rgb(247, 247, 247) 100%)
 	background-image: -ms-linear-gradient(top,rgb(255, 255, 255) 0%,rgb(247, 247, 247) 100%)
- 
 .toTop
 	display: none
 	position: fixed
@@ -199,7 +244,7 @@ span[class*="icon-"]
 	width: 80px
 	height: 80px
 	border-radius: 50%
-	opacity: 0.7
+	opacity: 0.6
 	z-index: 99
 	transition: 0.4s ease
 	font-size: 18px
@@ -218,11 +263,110 @@ span[class*="icon-"]
 	&:hover
 		opacity: 1
 		color: $background-color2
-		border: 3px solid $color-orange
-		width: 86px
-		height: 86px
-		bottom: 97px
-		right: 27px
+		border: 2px solid $color-orange
+		width: 84px
+		height: 84px
+		bottom: 98px
+		right: 28px
 		.arrow .icon-right
 			color: $background-color2
-		
+
+/* MEDIA */
+@media screen and (min-width:992px)
+	.goods2__row
+		position: relative
+	.goods2__right
+		position: absolute
+		right: 0
+
+@media screen and (max-width:1200px)
+	.goods, .about, .section-slider
+		padding: 0 10px
+	.slider__img
+		width: 100%
+	.goods1, .goods2, .goods3
+		&__left__item img
+			width: 100%
+@media screen and (max-width:991px)
+	.header__logo
+		margin-bottom: 15px
+	.slider
+		&__item
+			padding: 10px 0
+		&__left
+			text-align: center
+		&__right img
+			margin: 0 auto
+	.goods1, .goods2, .goods3
+		& h2
+			text-align: center
+		&__left__item img
+			margin: 0 auto
+		&__right__title
+			margin: 20px 0 50px
+		&__left__nav__item img
+			margin: 0 auto
+	.title
+		margin: 20px auto
+@media screen and (max-width:767px)
+	.header__row
+		margin: 20px 0
+	.menu
+		display: block
+		top: -300px
+		opacity: 0
+		position: absolute
+		text-align: left
+		z-index: -1
+		background: $background-color2
+		&__click
+			position: relative
+			opacity: 1
+			top: 0px
+			z-index: 2
+			background: url(../img/menu.png) no-repeat 150px 75%
+		&__item
+			padding: 10px 0
+			&__link
+				padding: 10px
+				position: relative
+				&:hover
+					background: transparent
+					color: #000
+					&:after
+						content: ''
+						width: 100%
+						height: 2px
+						background-color: $color-orange
+						display: block
+						position: absolute
+						left: 50%
+						margin-left: -50%
+						transition: 0.4s
+						top: 30px
+	.about
+		&__img img
+			width: 100%
+@media screen and (max-width:425px)
+	.contacts__text__phone, .contacts__text__address, .contacts__text__mail
+		white-space: pre-line
+	.goods1__left__nav__item, .goods2__left__nav__item, .goods3__left__nav__item
+		height: 70px
+		& img
+			width: 70px
+	.menu__item__link
+		font-size: 17px
+	.toTop
+		right: 15px
+		bottom: 30px
+		width: 60px
+		height: 60px
+		opacity: 0.6
+		font-size: 15px
+		text-align: center
+		line-height: 70px
+		&:hover
+			width: 64px
+			height: 64px
+			bottom: 28px
+			right: 13px

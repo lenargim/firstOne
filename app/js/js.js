@@ -41,7 +41,7 @@ $(document).ready(function(){
 	  	slidesToScroll: 1,
 	  	asNavFor: '.goods1__left__nav',
 	  	fade: true,
-	  	draggable: false
+	  	draggable: false,
 	});
 	$('.goods1__left__nav').slick({
 	  slidesToShow: 3,
@@ -50,6 +50,7 @@ $(document).ready(function(){
 	  dots: false,
 	  centerMode: true,
 	  focusOnSelect: true,
+	  draggable: false,
 	});
 	$('.goods2__left__for').slick({
 		dots: false,
@@ -58,7 +59,7 @@ $(document).ready(function(){
 	  	slidesToScroll: 1,
 	  	asNavFor: '.goods2__left__nav',
 	  	fade: true,
-	  	draggable: false
+	  	draggable: false,
 	});
 	$('.goods2__left__nav').slick({
 	  slidesToShow: 3,
@@ -67,6 +68,7 @@ $(document).ready(function(){
 	  dots: false,
 	  centerMode: true,
 	  focusOnSelect: true,
+	  draggable: false,
 	});
 	$('.goods3__left__for').slick({
 		dots: false,
@@ -75,7 +77,7 @@ $(document).ready(function(){
 	  	slidesToScroll: 1,
 	  	asNavFor: '.goods3__left__nav',
 	  	fade: true,
-	  	draggable: false
+	  	draggable: false,
 	});
 	$('.goods3__left__nav').slick({
 	  slidesToShow: 3,
@@ -84,6 +86,7 @@ $(document).ready(function(){
 	  dots: false,
 	  centerMode: true,
 	  focusOnSelect: true,
+	  draggable: false,
 	});
 
 	/*Прокрутка страницы*/
@@ -95,7 +98,7 @@ $(document).ready(function(){
 	  $('body,html').animate({scrollTop: top}, 1200);
 	});
 
-	/*Наверх*/
+	/*Наверх toTop*/
 
 	$(window).scroll(function() {
     if ($(this).scrollTop()) {
@@ -107,4 +110,26 @@ $(document).ready(function(){
 	$("#toTop").click(function() {
 	    $("html, body").animate({scrollTop: 0}, 1000);
 	});
-})
+
+/* mobile menu */
+
+	$('.mobile-menu').on('click', function(){
+    	$(this).toggleClass('mobile-menu__open');
+    	$(this).siblings('.menu').toggleClass('menu__click');
+
+ 	});
+  	$('.menu__item__link').on('click', function(){
+    	$('.mobile-menu').toggleClass('mobile-menu__open');
+    	$('.menu').toggleClass('menu__click');
+ 	});
+  	/*$(document).on('mouseup', function (e) {
+    	if ($(".menu").has(e.target).length === 0 && $('.mobile-menu').has(e.target).length === 0){
+        	$(".menu").removeClass('menu__click');
+        	$('.mobile-menu').removeClass('mobile-menu__open');
+    	};
+	}); */
+
+
+});
+
+
