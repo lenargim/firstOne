@@ -1,42 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/slick.css">
-	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
-	<link rel="stylesheet" type="text/css" href="css/iconmoon.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<title>Avtodiagnost- Автодиагностика автомобилей в Казани</title>
-</head>
-<body>
-<header class="header">
-	<div class="wrapper">
-		<div class="row header__row">
-			<div class="header__logo col-lg-2 text-center text-lg-auto"><a href="/"><img src="img/header-logo.png" alt=""></a></div>
-			<div class="mobile-menu d-flex col-1 d-md-none">
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-			</div>
-			<nav class="col-lg-9 col-xl-8  menu animated">
-					<li class="menu__item"><a class="menu__item__link" href="#good1">CREATOR C200</a></li>
-					<li class="menu__item"><a class="menu__item__link" href="#good2">Launch CReader 3001</a></li>
-					<li class="menu__item"><a class="menu__item__link" href="#good3">U480 OBD-II CAN</a></li>
-					<li class="menu__item"><a class="menu__item__link" href="#about">О нас</a></li>
-					<li class="menu__item"><a class="menu__item__link" href="#contacts">Контакты</a></li>
-			</nav>
-		</div>
-	</div>
-</header>
-<div class="toTop" id="toTop">
-	<div class="arrow">
-		<span class="icon-right"><span class="path1"></span><span class="path2"></span></span>
-	</div>
-	<span>Вверх</span>
-</div>
+<? require 'header.php';?>
 <section class="section-slider">
 	<div class="slider">
 		<div class="slider__item">
@@ -269,37 +231,4 @@
 	<div class="about__img"><img src="img/sample.png" alt=""></div>
 	</div>
 </section>
-<section id="contacts" class="contacts">
-	<div class="contacts__title title"><h2>Как нас найти</h2></div>
-	<div class="contacts__text row">
-		<div class="col-md-6">
-			<div class="contacts__text__phone">
-			<span class="icon-mobile"></span>
-			<span>Позвонить по номеру: </span>
-			<a href="tel:+7439034984389">+7423-09548945-9</a>
-			</div>
-			<div class="contacts__text__address">
-				<span class="icon-location-pin_copy"></span>
-				<span>Прийти в гости: ул. Фатыха Амирхана 12А</span>
-			</div>
-		</div>
-		<div class="col-md-6">
-			<div class="contacts__text__mail">
-				<form action="post.php" method="post">
-					<span class="icon-mail"></span>
-					<label for="text__mail">Написать на почту: </label>
-					<input id="text__mail" type="text" class="contacts__text__mail gradient">
-					<input class="button" type="submit" value="Отправить">
-				</form>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8a31d1e8a360ad2cec38b21ed8f817cc3d7650b55c2a44184ae9431b3e33cfde&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
-</section>
-
-<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/slick.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/js.js"></script>
-</body>
-</html>
+<?php require 'contacts.php'; ?>
