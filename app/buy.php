@@ -1,11 +1,15 @@
 <?php 
 
-require_once('phpmailer/PHPMailerAutoload.php');
+require('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
 $mail->CharSet = 'utf-8';
 
-$text = $_POST['text'];
-$phone = $_POST['phone'];
+$buy_name = $_POST['buy_name'];
+$buy_phone = $_POST['buy_phone'];
+$buy_comment = $_POST['buy_comment'];
+$buy_amount = $_POST['buy_amount'];
+$buy_good = $_POST['buy_good'];
+$buy_sum = $_POST['buy_sum'];
 
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
@@ -28,8 +32,9 @@ $mail->addAddress('oooanvers@mail.ru');     // Кому будет уходит�
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                                  // Set email format to HTML
 
-$mail->Subject = 'Заявка с сайта avtoscanerpro.ru';
-$mail->Body    = 'Пользователь с номером: ' .$phone." написал: ".$text;
+$mail->Subject = 'Заявка на покупку с avtoscanerpro.ru';
+$mail->Body    = 'Пользователь: ' .$buy_name. ' с номером: ' .$buy_phone.'<br> написал: '.$buy_comment.
+'<br>Заказ: ' .$buy_good. '. Количество: ' .$buy_amount.  'шт. <br> Сумма: <b>'.$buy_sum. '<b> рублей.';
 $mail->AltBody = '';
 
 if(!$mail->send()) {

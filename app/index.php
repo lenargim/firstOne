@@ -1,229 +1,92 @@
 <? require 'header.php';?>
+<div class="tytoknoall"></div>
 <section class="section-slider">
 	<div class="slider">
-		<div class="slider__item">
-			<div class="wrapper">
-				<div class="row d-flex align-items-center">
-					<div class="col-lg-5 slider__left">
-						<h1>CREATOR C200</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius delectus ut quasi, temporibus modi quaerat veniam suscipit, ipsam excepturi nesciunt?</p>
-						<button class="button">Подробнее</button>
+			<?php
+				$goods = get_goods();
+				foreach ($goods as $good): ?>
+				<div class="slider__item">
+					<div class="wrapper">
+						<div class="row d-flex align-items-center">
+							<div class="col-lg-5 slider__left">
+								<h1><? echo $good["title"]; ?></h1>
+								<p><? echo $good["slider_text"]; ?></p>
+								<a href="/good.php?id=<?php echo $good["id"]?>">
+									<button class="button">Подробнее</button>
+								</a>
+							</div>
+							<div class="col-lg-7 slider__right"><img src="<? echo $good["img1"] ?>" class="slider__img" alt="<? echo $good["alter_name"] ?>"></div>
+						</div>		
 					</div>
-					<div class="col-lg-7 slider__right"><img src="img/goods1.1.jpg" class="slider__img" alt="img"></div>
-				</div>		
-			</div>
-		</div>
-		<div class="slider__item">
-			<div class="wrapper">
-				<div class="row d-flex align-items-center">
-					<div class="col-lg-5 slider__left">
-						<h1>Launch CReader 3001</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius delectus ut quasi, temporibus modi quaerat veniam suscipit, ipsam excepturi nesciunt?</p>
-						<button class="button">Подробнее</button>
-					</div>
-					<div class="col-lg-7 slider__right"><img src="img/slider1.png" class="slider__img" alt="img"></div>
 				</div>
-			</div>
-		</div>
-		<div class="slider__item">
-			<div class="wrapper">
-				<div class="row d-flex align-items-center">
-					<div class="col-lg-5 slider__left">
-						<h1>Launch CReader 3001</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius delectus ut quasi, temporibus modi quaerat veniam suscipit, ipsam excepturi nesciunt?</p>
-						<button class="button">Подробнее</button>
-					</div>
-				<div class="col-lg-7 slider__right"><img src="img/slider1.png" class="slider__img" alt="img"></div>
-			</div>
-		</div>
+			<?php endforeach; ?>
 	</div>
 </section>
-<section class="goods goods1" id="good1">
-	<div class="wrapper">
-		<div class="row goods1__row">
-			<div class="col-lg-6 goods1__right" id="goods1__right">
-				<div class="goods1__right__title"><h2>CREATOR C200</h2></div>
-				<div class="goods1__content">
-					<div class="goods1__content__item">
-						<p class="goods1__right__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum minus placeat, temporibus quidem minima repellendus dolore officiis ad deleniti. Nisi eius eveniet, accusantium aperiam laudantium ipsum culpa, perspiciatis modi nihil!!!</p>
-						<ul class="goods1__right__ul">
-							<li class="goods1__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, dolore!</li>
-							<li class="goods1__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, dolores.</li>
-							<li class="goods1__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, eum!</li>
-							<li class="goods1__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, similique!</li>
-						</ul>
+<?php $goods = get_goods();
+			foreach ($goods as $good) {?>
+	<section class="goods" id="good<? echo $good["id"]; ?>">
+		<div class="wrapper">
+			<div class="row goods__row" id="goods<? echo $good["id"]; ?>__row">
+				<div class="col-lg-6 goods__right" id="goods<? echo $good["id"]; ?>__right">
+					<div class="goods__right__title"><h2><? echo $good["title"]; ?></h2></div>
+					<div class="goods__content">
+						<div class="goods__content__item">
+							<p class="goods__right__text"><? echo $good["slider_text"]; ?></p>
+							<ul class="goods__right__ul">
+								<li class="goods__right__li"><span class="icon-01"><span class="path1"></span></span><? echo $good["option1"]; ?></li>
+								<li class="goods__right__li"><span class="icon-01"><span class="path1"></span></span><? echo $good["option2"]; ?></li>
+								<li class="goods__right__li"><span class="icon-01"><span class="path1"></span></span><? echo $good["option3"]; ?></li>
+								<li class="goods__right__li"><span class="icon-01"><span class="path1"></span></span><? echo $good["option4"]; ?></li>
+							</ul>
+						</div>
+						<div class="goods__content__item">
+							<ul class="goods__right__ul2">
+								<li class="goods__right__li2"><span class="icon-3"><span class="path1"></span></span>
+									<div class="goods__right__li2__text">
+										<p>Кабель - <span><? echo $good["cabel"]; ?></span></p>
+									</div>
+								</li>
+								<li class="goods__right__li2"><span class="icon-lupa2"><span class="path1"></span></span>
+									<div class="goods__right__li2__text">
+										<p>Разрешение монитора - <span><? echo $good["monitor"]; ?></span></p>
+									</div>
+								</li>
+								<li class="goods__right__li2"><span class="icon-h-power"></span>
+									<div class="goods__right__li2__text">
+										<p>Оперативная память - <span><? echo $good["RAM"]; ?></span></p>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div class="goods1__content__item">
-						<ul class="goods1__right__ul2">
-							<li class="goods1__right__li2"><span class="icon-3"><span class="path1"></span></span>
-								<div class="goods1__right__li2__text">
-									<p><span>xyu` - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, quis!</p>
-								</div>
-							</li>
-							<li class="goods1__right__li2"><span class="icon-lupa2"><span class="path1"></span></span>
-								<div class="goods1__right__li2__text">
-									<p><span>pizda - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, fugiat.</p>
-								</div>
-							</li>
-							<li class="goods1__right__li2"><span class="icon-h-gear"></span>
-								<div class="goods1__right__li2__text">
-									<p><span>Dzhigurda - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, perferendis.</p>
-								</div>
-							</li>
-							<li class="goods1__right__li2"><span class="icon-h-power"></span>
-								<div class="goods1__right__li2__text">
-									<p><span>Pypsichek - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, veritatis.</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="button-row">
-					<a href="#" class="goods1__right__link">Подробнее.. 
-						<div class="spin"><span class="icon-right"><span class="path1"></span><span class="path2"></span></span></div>
-					</a>
-					<button class="button">Заказать</button>
-				</div>
-			</div>
-			<div class="col-lg-6 goods1__left">
-				<div class="goods1__left__for">
-					<div class="goods1__left__item"><img src="img/goods1.1.jpg" alt="sample"></div>
-					<div class="goods1__left__item"><img src="img/goods1.2.jpg" alt="sample"></div>
-					<div class="goods1__left__item"><img src="img/goods1.3.jpg" alt="sample"></div>
-				</div>
-				<div class="goods1__left__container goods1__left__nav">
-					<div class="goods1__left__nav__item"><img src="img/sample.png" alt="sample"></div>
-					<div class="goods1__left__nav__item"><img src="img/goods2.jpg" alt="sample"></div>
-					<div class="goods1__left__nav__item"><img src="img/goods3.jpg" alt="sample"></div>
-				</div>
-			</div>
-			
-		</div>
-	</div>
-</section>
-<section class="goods goods2" id="good2">
-	<div class="wrapper">
-		<div class="row goods2__row">
-			<div class="col-lg-6 goods2__right">
-				<div class="goods2__right__title"><h2>Launch CReader 3001</h2></div>
-				<div class="goods2__content">
-					<div class="goods2__content__item">
-						<p class="goods2__right__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum minus placeat, temporibus quidem minima repellendus dolore officiis ad deleniti. Nisi eius eveniet, accusantium aperiam laudantium ipsum culpa, perspiciatis modi nihil!</p>
-						<ul class="goods2__right__ul">
-							<li class="goods2__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, dolore!</li>
-							<li class="goods2__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, dolores.</li>
-							<li class="goods2__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, eum!</li>
-							<li class="goods2__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, similique!</li>
-						</ul>
-					</div>
-					<div class="goods2__content__item">
-						<ul class="goods2__right__ul2">
-							<li class="goods2__right__li2"><span class="icon-3"><span class="path1"></span></span>
-								<div class="goods2__right__li2__text">
-									<p><span>xyu` - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, quis!</p>
-								</div>
-							</li>
-							<li class="goods2__right__li2"><span class="icon-lupa2"><span class="path1"></span></span>
-								<div class="goods2__right__li2__text">
-									<p><span>pizda - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, fugiat.</p>
-								</div>
-							</li>
-							<li class="goods2__right__li2"><span class="icon-h-gear"></span>
-								<div class="goods2__right__li2__text">
-									<p><span>Dzhigurda - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, perferendis.</p>
-								</div>
-							</li>
-							<li class="goods2__right__li2"><span class="icon-h-power"></span>
-								<div class="goods2__right__li2__text">
-									<p><span>Pypsichek - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, veritatis.</p>
-								</div>
-							</li>
-						</ul>
+					<div class="button-row">
+						<a href="/good.php?id=<?php echo $good["id"]?>" class="goods__right__link">Подробнее.. 
+							<div class="spin"><span class="icon-right"><span class="path1"></span><span class="path2"></span></span></div>
+						</a>
+							<button class="button move-light order order<? echo $good["id"]; ?>" name="order<? echo $good["id"]; ?>">Заказать</button>
+						 <div class="card card<?php echo $good["id"];?>">
+					    	<div class="front"><span>Узнать цену</span></div>
+					    	<div class="back order" name='back<? echo $good["id"]; ?>'>
+					    		<? echo $good["price"]; ?> <span class="icon-rouble"></span>
+					    	</div>
+						</div>
 					</div>
 				</div>
-			<div class="button-row">
-				<a href="#" class="goods2__right__link">Подробнее.. 
-					<div class="spin"><span class="icon-right"><span class="path1"></span><span class="path2"></span></span></div>
-				</a>
-				<button class="button">Заказать</button>
-			</div>
-			</div>
-			<div class="col-lg-6 goods2__left">
-				<div class="goods2__left__for">
-					<div class="goods2__left__item"><img src="img/sample.png" alt="sample"></div>
-					<div class="goods2__left__item"><img src="img/goods2.jpg" alt="sample"></div>
-					<div class="goods2__left__item"><img src="img/goods3.jpg" alt="sample"></div>
-				</div>
-				<div class="goods2__left__container goods2__left__nav">
-					<div class="goods2__left__nav__item"><img src="img/sample.png" alt="sample"></div>
-					<div class="goods2__left__nav__item"><img src="img/goods2.jpg" alt="sample"></div>
-					<div class="goods2__left__nav__item"><img src="img/goods3.jpg" alt="sample"></div>
+				<div class="col-lg-6 goods__left">
+					<div class="goods__left__for" id="goods__left__for<? echo $good["id"]; ?>">
+						<div class="goods__left__item"><img src="<? echo $good["img1"]; ?>" alt="<? echo $good["alter_name"]; ?>"></div>
+						<div class="goods__left__item"><img src="<? echo $good["img2"]; ?>" alt="<? echo $good["alter_name"]; ?>"></div>
+					</div>
+					<div class="goods__left__container goods__left__nav" id="goods__left__nav<? echo $good["id"]; ?>">
+						<div class="goods__left__nav__item"><img src="<? echo $good["img1"]; ?>" alt="<? echo $good["alter_name"]; ?>"></div>
+						<div class="goods__left__nav__item"><img src="<? echo $good["img2"]; ?>" alt="<? echo $good["alter_name"]; ?>"></div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
-<section class="goods goods3" id="good3">
-	<div class="wrapper">
-		<div class="row goods3__row">
-			<div class="col-lg-6 goods3__right">
-				<div class="goods3__right__title"><h2>U480 OBD-II CAN</h2></div>
-				<div class="goods3__content">
-					<div class="goods3__content__item">
-						<p class="goods3__right__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum minus placeat, temporibus quidem minima repellendus dolore officiis ad deleniti. Nisi eius eveniet, accusantium aperiam laudantium ipsum culpa, perspiciatis modi nihil!</p>
-						<ul class="goods3__right__ul">
-							<li class="goods3__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, dolore!</li>
-							<li class="goods3__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, dolores.</li>
-							<li class="goods3__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, eum!</li>
-							<li class="goods3__right__li"><span class="icon-01"><span class="path1"></span></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, similique!</li>
-						</ul>
-					</div>
-					<div class="goods3__content__item">
-						<ul class="goods3__right__ul2">
-							<li class="goods3__right__li2"><span class="icon-3"><span class="path1"></span></span>
-								<div class="goods3__right__li2__text">
-									<p><span>xyu` - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, quis!</p>
-								</div>
-							</li>
-							<li class="goods3__right__li2"><span class="icon-lupa2"><span class="path1"></span></span>
-								<div class="goods3__right__li2__text">
-									<p><span>pizda - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, fugiat.</p>
-								</div>
-							</li>
-							<li class="goods3__right__li2"><span class="icon-h-gear"></span>
-								<div class="goods3__right__li2__text">
-									<p><span>Dzhigurda - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, perferendis.</p>
-								</div>
-							</li>
-							<li class="goods3__right__li2"><span class="icon-h-power"></span>
-								<div class="goods3__right__li2__text">
-									<p><span>Pypsichek - </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, veritatis.</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="button-row">
-					<a href="#" class="goods3__right__link">Подробнее.. 
-					<div class="spin"><span class="icon-right"><span class="path1"></span><span class="path2"></span></span></div>
-				</a>
-				<button class="button">Заказать</button>
-				</div>
-			</div>
-			<div class="col-lg-6 goods3__left">
-				<div class="goods3__left__for">
-					<div class="goods3__left__item"><img src="img/sample.png" alt="sample"></div>
-					<div class="goods3__left__item"><img src="img/goods2.jpg" alt="sample"></div>
-					<div class="goods3__left__item"><img src="img/goods3.jpg" alt="sample"></div>
-				</div>
-				<div class="goods3__left__container goods3__left__nav">
-					<div class="goods3__left__nav__item"><img src="img/sample.png" alt="sample"></div>
-					<div class="goods3__left__nav__item"><img src="img/goods2.jpg" alt="sample"></div>
-					<div class="goods3__left__nav__item"><img src="img/goods3.jpg" alt="sample"></div>
-				</div>
-			</div>
-		</div>
-</section>
+	</section>
+<?php } ?>
+
 <section id="about" class="about">
 	<div class="wrapper">
 		<div class="about__title title"><h2>Чем мы занимаемся</h2></div>
@@ -231,4 +94,6 @@
 	<div class="about__img"><img src="img/sample.png" alt=""></div>
 	</div>
 </section>
-<?php require 'contacts.php'; ?>
+<?php require 'contacts.php';
+		require 'cart.php';
+ ?>

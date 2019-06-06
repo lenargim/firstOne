@@ -11,7 +11,8 @@ gulp.task('sass', function() {
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
     browserSync.init({ // Выполняем browserSync
         server: { // Определяем параметры сервера
-            baseDir: 'app'// Директория для сервера - app
+            baseDir: 'app/', // Директория для сервера - app
+            directory: true
         },
         open: true,
         notify: false // Отключаем уведомления
@@ -21,6 +22,7 @@ gulp.task('watch',  function() {
     gulp.watch('app/sass/**/*.sass',  gulp.series('sass')); // Наблюдение за sass файлами
     gulp.watch('app/*.html').on('change', browserSync.reload);
     gulp.watch('app/*.js').on('change', browserSync.reload);
+    gulp.watch('app/*.php').on('change', browserSync.reload);
     gulp.watch('app/css/**/*.css').on('change', browserSync.stream); // Обновляем CSS на странице при изменении
     // Наблюдение за другими типами файлов
 });

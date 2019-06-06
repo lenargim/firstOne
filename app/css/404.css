@@ -1,0 +1,7 @@
+.error_page {
+  display: flex;
+  justify-content: center;
+}
+.error_home {
+	text-decoration: underline;
+}

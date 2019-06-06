@@ -23,7 +23,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-rouble:before {
+  content: "\e91b";
+}
 .icon-left2 .path1:before {
   content: "\e94a";
 }
